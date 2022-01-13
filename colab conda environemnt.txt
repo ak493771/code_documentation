@@ -1,0 +1,87 @@
+#steps to create conda environment
+1. install conda on colab 
+
+# INSTALL CONDA ON GOOGLE COLAB
+! wget https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.2-Linux-x86_64.sh
+! chmod +x Miniconda3-py37_4.8.2-Linux-x86_64.sh
+! bash ./Miniconda3-py37_4.8.2-Linux-x86_64.sh -b -f -p /usr/local
+import sys
+sys.path.append('/usr/local/lib/python3.7/site-packages/')
+
+2. Mounting the Google Drive into Google Colab
+
+#mount drive 
+
+from google.colab import drive
+drive.mount('/content/gdrive/', force_remount=True)
+
+3. List content of directory
+# listing using ls command 
+! ls
+# show more detail 
+! ls -l
+
+4. create directory in drive 
+# mkdir command 
+! mkdir compiled_data
+
+5. create files in colab
+# use of echo 
+! echo "The quick brown fox jumped over the lazy cat." > data.txt
+
+6. Create files in Python
+data2 = open("data2.txt", "w")
+data2.write("The quick brown fox jumped over the lazy cat.")
+data2.close()
+
+7. Download files from the Internet 
+# ! wget command                              (! = bash)
+  ! wget https://github.com/dataprofessor/data/raw/master/weather-weka.csv 
+
+8. Read files
+# cat command 
+! cat read.text
+
+9. Read files in Python (file handling method)
+data = open("data.txt", "r")
+data_content = data.read()
+data_content
+
+or 
+
+data_content.strip('\n')
+
+10. Accessing the Google Drive from Google Colab
+# ! ls "/content/gdrive/My Drive/Colab Notebooks/"
+
+11. Copy files from Google Drive into your Google Colab
+# pwd command 
+
+12. Delete a file
+# rm command used
+! rm tmp_data (delete a file)
+! ls (check directory)
+&
+deleting a whole directory
+! rm -r tmp_data
+
+
+13. Move files from Google Colab to Google Drive (mv command used to rename and move files)
+# move files into google drive
+! ls # open directory
+! mv weather-weka.csv "/content/gdrive/My Drive/dataset/" #copy file to a particular location.
+ rename file 
+! mv dhfr.csv dhfr2.csv
+
+
+14. copy files in colab 
+# cp command used
+! cp data.txt data2.txt "/content/gdrive/My Drive/dataset/" (command file_name "directory")
+
+15 currently working directory
+! pwd
+import os # (Miscellaneous operating system interfaces)
+os.getcwd()
+
+16. Accessing the Google Drive from Google Colab
+! ls ! "/content/gdrive/My Drive/Colab Notebooks/" (command "directory")
